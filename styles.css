@@ -1,0 +1,434 @@
+/* Estilos Globais */
+:root {
+    --cor-primaria: #007bff; /
+    --cor-texto-principal: #333;
+    --cor-texto-secundario: #6c757d;
+    --cor-fundo-claro: #f8f9fa;
+    --cor-link: #495057;
+    --fonte-titulo: 'Montserrat';
+    --fonte-texto: 'Open Sans';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    line-height: 1.6;
+    color: var(--cor-texto-principal);
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-link);
+}
+
+/* Header e Navegação */
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-texto-principal);
+}
+
+.logo span {
+    color: #495057;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 30px;
+}
+
+.nav ul li a {
+    color: var(--cor-link);
+    font-weight: 400;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav ul li a:hover,
+.nav ul li a[aria-current="page"] {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-primaria);
+}
+
+/* Banner Principal (Sobre Nós) */
+.hero {
+    position: relative;
+    height: 515px;
+    overflow: hidden;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-left: 50px;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+
+/* Seção Nosso Time */
+.team-section {
+    padding: 60px 0;
+    text-align: left;
+    color: #515070;
+}
+
+
+.team-section h2 {
+    font-size: 2rem;
+    margin-bottom: 0px;
+}
+
+.team-section > p {
+    margin-bottom: 40px;
+    color: var(--cor-texto-secundario);
+    font-size: 1rem;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.member-card {
+    width: 270px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.member-photo {
+    position: relative;
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    background-color: #ccc;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    display: block;
+}
+
+.member-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(49, 51, 113, 0.7), transparent);
+    color: #fff;
+    text-align: left;
+}
+
+.member-info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.member-info p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+
+.member-card:first-child .member-photo img {
+    filter: grayscale(0%);
+}
+
+.member-card:not(:first-child) .member-info {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.member-card:not(:first-child):hover .member-info {
+    opacity: 1;
+}
+
+
+/* Seção Missão, Visão e Valores */
+.m-v-v-section {
+    color: #515070;
+    padding: 80px 0;
+    text-align: center;
+    background-color: #f6f6f6;
+    
+}
+
+.m-v-v-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.m-v-v-item {
+    max-width: 300px;
+    padding: 20px;
+}
+
+.m-v-v-item .icon {
+    font-size: 3rem;
+    margin-right: 15px;
+    color: var(--cor-texto-secundario);
+    border: 2px solid var(--cor-texto-secundario);
+    border-radius: 50%;
+    padding: 10px;
+    line-height: 1;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.m-v-v-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--cor-texto-principal);
+}
+
+.m-v-v-item p {
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #ffffff;
+    background-color: #fff;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--cor-texto-secundario);
+}
+
+.footer .nav ul {
+    justify-content: flex-start;
+}
+
+.footer .logo {
+    font-size: 1rem;
+    margin-right: 30px;
+}
+
+.footer .logo span {
+    font-size: 0.6rem;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer .nav ul li {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+.footer .nav ul li a {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.copyright {
+    color: var(--cor-texto-secundario);
+    font-size: 0.75rem;
+    text-align: right;
+}
+
+.copyright strong {
+    font-weight: 700;
+}
+
+
+/* ------------------------------------------- */
+/*  (Versão Mobile) */
+/* ------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* Header e Navegação */
+    .header .container {
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+    .nav {
+        width: 100%;
+        margin-top: 15px;
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+    }
+
+    .nav ul {
+        justify-content: space-around;
+        gap: 10px;
+    }
+
+    .nav ul li {
+        margin-left: 0;
+    }
+
+    /* Banner Principal (Sobre Nós) */
+    .hero {
+        height: 300px;
+    }
+
+    .hero-content {
+        padding-left: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+
+    /* Seção Nosso Time */
+    .team-section {
+        padding: 40px 0;
+    }
+
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .member-card {
+        width: 80%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+
+    /* Seção Missão, Visão e Valores */
+    .m-v-v-section {
+        padding: 40px 0;
+    }
+
+    .m-v-v-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .m-v-v-item {
+        max-width: 90%;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-left {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .footer .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .footer .nav ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer .nav ul li {
+        margin-right: 15px;
+    }
+
+    .copyright {
+        text-align: left;
+        width: 100%;
+    }
+
+
+}
